@@ -19,11 +19,15 @@ endif()
 # Project name
 project(FSMS)
 
+# Find OpenMP for Clang
+set(OpenMP_CXX_LIBRARIES "/opt/homebrew/Cellar/libomp/21.1.1/lib/libomp.dylib")
+set(OpenMP_CXX_LIB_NAMES "omp")
+set(OpenMP_CXX_INCLUDE_DIRS "/opt/homebrew/Cellar/libomp/21.1.1/include")
+set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp")
+set(OpenMP_CXX_FLAGS "${OpenMP_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+
 include_directories(${OpenMP_CXX_INCLUDE_DIRS})
 link_libraries(${OpenMP_CXX_LIBRARIES})
-
-# Threads 
-find_package(Threads REQUIRED)
 
 # Add any include file 
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -36,7 +40,6 @@ add_executable(FSMS ${SRC_FILES})
 
 # Link libraries to executable 
 target_link_libraries(FSMS ${OpenMP_CXX_LIBRARIES})
-target_link_libraries(FSMS Threads::Threads)
 
 # Set compiler flags 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
