@@ -17,7 +17,7 @@ if(CMAKE_BUILD_TYPE MATCHES "Debug")
 endif()
 
 # Project name
-project(DFSMS)
+project(FSMS)
 
 include_directories(${OpenMP_CXX_INCLUDE_DIRS})
 link_libraries(${OpenMP_CXX_LIBRARIES})
@@ -32,11 +32,11 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 file(GLOB_RECURSE SRC_FILES "src/*.cpp")
 
 # Add excutionable
-add_executable(DFSMS ${SRC_FILES})
+add_executable(FSMS ${SRC_FILES})
 
 # Link libraries to executable 
-target_link_libraries(DFSMS ${OpenMP_CXX_LIBRARIES})
-target_link_libraries(DFSMS Threads::Threads)
+target_link_libraries(FSMS ${OpenMP_CXX_LIBRARIES})
+target_link_libraries(FSMS Threads::Threads)
 
 # Set compiler flags 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
