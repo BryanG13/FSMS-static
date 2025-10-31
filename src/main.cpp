@@ -778,7 +778,7 @@ int main() {
 	int nIt = 5, it = 0;
 	//int i, j, k, b, t, p, l, s;
 	//double b_next;
-	ofstream inst("C:/Users/bgalarza/Desktop/BG/Model 3/Formal Data/Instance_H_" + to_string(instance) + ".txt");
+	ofstream inst("data/input/Instance_H_" + to_string(instance) + ".txt");
 	inst << "---------- Weight factors of the objective function -------- " << endl << endl;
 	//WEIGHT FACTORS--------------------------------------------------------------------------
 	float c1 = 0.33f;
@@ -829,7 +829,7 @@ int main() {
 	for (int i = 0; i < R; i++) {
 		passengers[i] = new double[2];
 	}
-	ifstream filep("C:/Users/bgalarza/Desktop/BG/Model 3/Data/passengers" + to_string(R) + ".txt");
+	ifstream filep("data/input/passengers" + to_string(R) + ".txt");
 	int i0 = 0;
 	while (i0 < R) {
 		filep >> passengers[i0][0] >> passengers[i0][1]; // extracts 2 floating point values seperated by whitespace
@@ -840,7 +840,7 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		mandatory[i] = new double[2];
 	}
-	ifstream filem("C:/Users/bgalarza/Desktop/BG/Model 3/Data/mandatory.txt");
+	ifstream filem("data/input/mandatory.txt");
 	i0 = 0;
 	while (i0 < N) {
 		filem >> mandatory[i0][0] >> mandatory[i0][1]; // extracts 2 floating point values seperated by whitespace
@@ -851,7 +851,7 @@ int main() {
 	for (int i = 0; i < (N - 1) * M; i++) {
 		optional[i] = new double[2];
 	}
-	ifstream fileo("C:/Users/bgalarza/Desktop/BG/Model 3/Data/optional" + to_string(M) + ".txt");
+	ifstream fileo("data/input/optional" + to_string(M) + ".txt");
 	i0 = 0;
 	while (i0 < (N - 1) * M) {
 		fileo >> optional[i0][0] >> optional[i0][1]; // extracts 2 floating point values seperated by whitespace
@@ -860,7 +860,7 @@ int main() {
 
 	// Arrival times of the passengers 
 	double arrivals[R1];
-	ifstream filea("C:/Users/bgalarza/Desktop/BG/Model 3/Data/arrivals" + to_string(R) + ".txt");
+	ifstream filea("data/input/arrivals" + to_string(R) + ".txt");
 	inst << endl << "Desired arrival times of the passengers in seconds: " << endl;
 	i0 = 0;
 	while (i0 < R1) {
@@ -870,7 +870,7 @@ int main() {
 	}
 	// Departure times of the passengers 
 	double departures[R2];
-	ifstream filed("C:/Users/bgalarza/Desktop/BG/Model 3/Data/departures" + to_string(R) + ".txt");
+	ifstream filed("data/input/departures" + to_string(R) + ".txt");
 	inst << endl << "Desired departure times of the passengers in seconds: " << endl;
 	i0 = 0;
 	while (i0 < R2) {
@@ -3418,8 +3418,8 @@ int main() {
 			//for (it = 0; it < nIt; it++) {
 			//}
 		}
-		ofstream progp("C:/Users/bgalarza/Desktop/BG/Model 3/Solution/Heuristic/progress_" + to_string(instance) + ".txt");
-		ofstream progitp("C:/Users/bgalarza/Desktop/BG/Model 3/Solution/Heuristic/progressit_" + to_string(instance) + ".txt");
+		ofstream progp("data/output/progress_" + to_string(instance) + ".txt");
+		ofstream progitp("data/output/progressit_" + to_string(instance) + ".txt");
 		for (int f = 0; f < prog.size(); f++) {
 			progp << prog[f] << endl;
 			progitp << progit[f] << endl;
@@ -4201,7 +4201,7 @@ int main() {
 
 
 	//Print
-	ofstream runs_p("C:/Users/bgalarza/Desktop/BG/Model 3/Solution/Heuristic/Parallel/runs_" + to_string(instance) + ".txt");
+	ofstream runs_p("data/output/runs_" + to_string(instance) + ".txt");
 	double avgObj = 0, avgIt = 0;
 	for (int i = 0; i < itObj.size(); i++) {
 		runs_p << itObj[i] << " " << itRT[i] << endl;
@@ -4212,9 +4212,9 @@ int main() {
 	avgIt = avgIt / itObj.size();
 	runs_p.close();
 
-	ofstream xsol_p("C:/Users/bgalarza/Desktop/BG/Model 3/Solution/Heuristic/Parallel/xsol_" + to_string(instance) + ".txt");
-	ofstream ysol_p("C:/Users/bgalarza/Desktop/BG/Model 3/Solution/Heuristic/Parallel/ysol_" + to_string(instance) + ".txt");
-	ofstream dsol_p("C:/Users/bgalarza/Desktop/BG/Model 3/Solution/Heuristic/Parallel/dsol_" + to_string(instance) + ".txt");
+	ofstream xsol_p("data/output/xsol_" + to_string(instance) + ".txt");
+	ofstream ysol_p("data/output/ysol_" + to_string(instance) + ".txt");
+	ofstream dsol_p("data/output/dsol_" + to_string(instance) + ".txt");
 	cout << "\n";
 	int onb = 0;
 	double cost;
