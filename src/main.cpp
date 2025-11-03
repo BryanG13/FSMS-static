@@ -794,11 +794,11 @@ int main() {
 	inst << "Number of buses: " << B << endl;
 	const int N = 6; // number of mandatory stations
 	inst << "Number of mandatory bus stops: " << N << endl;
-	const int M = 8; // number of stations in cluster
+	const int M = 5; // number of stations in cluster
 	inst << "Number optional bus stops per cluster: " << M << " \n --> One cluster between each mandatory stop: " + to_string((N - 1) * M) + " optional stops in total" << endl;
 	const int S = (N - 1) * M + N; // amount of Stations
 	inst << "Total number of bus stops: " << S << endl;
-	const int R = 162; // number of passenger requests
+	const int R = 48; // number of passenger requests
 	const int R1 = int(R / 2), R2 = R - R1;
 	inst << "Number of passenger requests: " << R << endl;
 	//double pm1 = 0, pm2 = 0, pm3 = 1, fpm = 0;
