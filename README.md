@@ -245,27 +245,3 @@ Currently, no automated test suite. To validate:
 1. Run with small instances (R=10, B=3)
 2. Check console for constraint violations
 3. Verify output files for consistency
-
-## Performance
-
-**Typical runtime** (M1 MacBook Pro, 12 threads):
-- 48 passengers, 12 buses: ~2-5 minutes per iteration
-- 100 passengers, 20 buses: ~10-20 minutes per iteration
-
-**Memory usage:** ~50-200 MB depending on problem size.
-
-## Known Issues
-
-- Input file paths are relative to working directory; run from project root
-- OpenMP detection may fail on older macOS/Clang; build still works without parallelization
-- Large instances (R > 200) may require tuning iteration limits
-
-## Contributing
-
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes with clear commit messages
-4. Test with Debug build (ASan enabled)
-5. Submit a pull request
